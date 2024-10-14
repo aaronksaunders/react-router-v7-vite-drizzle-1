@@ -4,13 +4,13 @@ Testing out the new React Router v7, ie next version of Remix using Vite by tryi
 
 ## Technologies Used
 
-- React
-- React Router (v7.0.0-pre.1)
-- Drizzle ORM
-- SQLite (via better-sqlite3)
-- Tailwind CSS
+- [React](https://reactjs.org/)
+- [React Router (v7.0.0-pre.1) #dev branch](https://reactrouter.com/dev/guides)
+- [Drizzle ORM](https://orm.drizzle.team/)
+- [SQLite (via better-sqlite3)](https://github.com/WiseLibs/better-sqlite3)
+- [Tailwind CSS](https://tailwindcss.com/)
 - TypeScript
-- Vite
+- [Vite](https://vitejs.dev/)
 
 ## Features
 
