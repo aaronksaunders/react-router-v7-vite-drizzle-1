@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc",
+    "migrate": "drizzle-kit migrate",
+    "studio": "drizzle-kit studio",
+    "generate": "drizzle-kit generate --schema ./app/db/schema.ts --dialect sqlite --out ./drizzle",
+    "push": "drizzle-kit push --schema ./app/db/schema.ts --dialect sqlite --url sqlite.db"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "@react-router/node": "7.0.0-pre.1",
+    "@react-router/serve": "7.0.0-pre.1",
+    "better-sqlite3": "^11.3.0",
+    "drizzle-orm": "^0.34.1",
+    "isbot": "^5.1.17",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router": "^7.0.0-pre.1",
+    "react-router-dom": "^7.0.0-pre.1"
+  },
+  "devDependencies": {
+    "@react-router/dev": "7.0.0-pre.1",
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/react": "^18.3.9",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "drizzle-kit": "^0.25.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "vite-tsconfig-paths": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
