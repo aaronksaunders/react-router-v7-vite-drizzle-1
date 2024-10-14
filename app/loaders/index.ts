@@ -9,12 +9,30 @@ import { eq } from "drizzle-orm";
  * @returns {Promise<User | null>}A promise that resolves to the contact object if found, or null if not found.
  */
 export const fetchContact = async (id: string) => {
-    const result = await db
-        .select()
-        .from(users)
-        .where(eq(users.id, parseInt(id)))
-        .limit(1);
-    return result[0] || null;
+  const result = await db
+    .select()
+    .from(users)
+    .where(eq(users.id, parseInt(id)))
+    .limit(1);
+  return result[0] || null;
+};
+
+export const fetchPost = async (id: string) => {
+  const result = await db
+    .select()
+    .from(posts)
+    .where(eq(posts.id, parseInt(id)))
+    .limit(1);
+  return result[0] || null;
+};
+
+export const fetchPostsByContact = async (id: string) => {
+  const result = await db
+    .select()
+    .from(posts)
+    .where(eq(posts.authorId, parseInt(id)))
+    .all();
+  return result;
 };
 
 /**
@@ -23,8 +41,8 @@ export const fetchContact = async (id: string) => {
  * @returns {Promise<any[]>} A promise that resolves to an array of posts.
  */
 export const fetchPosts = async () => {
-    const result = await db.select().from(posts).all();
-    return result;
+  const result = await db.select().from(posts).all();
+  return result;
 };
 
 /**
@@ -36,15 +54,15 @@ export const fetchPosts = async () => {
  * @returns {Promise<User | null>} The created user object or null if the creation failed.
  */
 export const createUser = async (
-    name: string,
-    email: string,
-    username: string
+  name: string,
+  email: string,
+  username: string
 ) => {
-    const result = await db
-        .insert(users)
-        .values({ name, email, username })
-        .returning();
-    return result[0] || null;
+  const result = await db
+    .insert(users)
+    .values({ name, email, username })
+    .returning();
+  return result[0] || null;
 };
 
 /**
@@ -53,6 +71,6 @@ export const createUser = async (
  * @returns {Promise<User[]>} A promise that resolves to an array of user records.
  */
 export const fetchUsers = async () => {
-    const result = await db.select().from(users).all();
-    return result;
+  const result = await db.select().from(users).all();
+  return result;
 };

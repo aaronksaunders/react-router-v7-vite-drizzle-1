@@ -104,7 +104,7 @@ export default function ContactEdit({ loaderData }: Route.ComponentProps) {
  * @returns A JSON response containing the fetched contact.
  */
 export async function loader({ params }: Route.LoaderArgs) {
-  const contact = await fetchContact(params.id!);
+  const contact = await fetchContact(params.contactId!);
   return json({ contact });
 }
 
@@ -125,7 +125,7 @@ export async function action({ request, params }: Route.ActionArgs) {
   // if the intent is delete, delete the contact
   if (intent === "delete") {
     try {
-      await db.delete(users).where(eq(users.id, parseInt(params.id!)));
+      await db.delete(users).where(eq(users.id, parseInt(params.contactId!)));
       return redirect("/");
     } catch (error) {
       return json({ success: false, error: (error as Error).message });
@@ -143,7 +143,7 @@ export async function action({ request, params }: Route.ActionArgs) {
     await db
       .update(users)
       .set(updates)
-      .where(eq(users.id, parseInt(params.id!)));
+      .where(eq(users.id, parseInt(params.contactId!)));
 
     // Redirect to the home page after successful update
     return redirect("/");

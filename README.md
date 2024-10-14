@@ -20,6 +20,22 @@ Testing out the new React Router v7, ie next version of Remix using Vite by tryi
 - Delete contacts
 - Server-side rendering with React Router
 
+
+### Nested Routes Example
+`route("/contact/:contactId", "routes/contact.tsx", [...])`
+- Defines a route with a parameter, `/contact/:contactId`, where `:contactId` is a dynamic segment that can match different values (e.g., /contact/123).
+- "`routes/contact.tsx`" specifies the component that will be rendered for this route.
+- The third parameter is an array of nested routes, meaning there are additional routes that exist under the `/contact/:contactId` path.
+- The nested routes are defined as follows:
+   - `index("routes/contact_posts.tsx")`
+      - Specifies an index route for `/contact/:contactId`, which will render the `contact_posts.tsx` component when the user navigates to `/contact/:contactId`. This route is used to display a list of posts.
+   - `route("post/:postId", "routes/post.tsx")`
+      - Defines a nested route under `/contact/:contactId` for a specific post (e.g., `/contact/123/post/456`).
+      - "`routes/post.tsx`" specifies the component that will be rendered when this nested route is matched.
+      - The `postId` parameter is a dynamic segment that can match different values (e.g., `/contact/123/post/456`).
+      - This route allows you to create a nested structure under each contact, allowing you to display related posts or information for each contact.
+
+
 ## Prerequisites
 
 - Node.js (v20.0.0 or later)
