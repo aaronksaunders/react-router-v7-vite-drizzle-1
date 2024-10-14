@@ -97,6 +97,8 @@ Testing out the new React Router v7, ie next version of Remix using Vite by tryi
 - `npm run typecheck`: Run TypeScript type checking
 - `npm run migrate`: Run database migrations
 - `npm run studio`: Open Drizzle Studio for database management
+- `npm run seed`: Seed the database with initial data, see `./app/db/seed.ts` for additional information
+
 
 ## Project Structure
 
