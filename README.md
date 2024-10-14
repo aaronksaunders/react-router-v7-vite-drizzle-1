@@ -1,6 +1,6 @@
-# React Router Contact Management App
+# React Router v7, Vite, DrizzleORM Contact Management App
 
-This is a contact management application built with React Router and Drizzle ORM. It allows users to view, add, edit, and delete contacts.
+Testing out the new React Router v7, ie next version of Remix using Vite by trying to build a simple application. This is a contact management application built with React Router and Drizzle ORM. It allows users to view, add, edit, and delete contacts.
 
 ## Technologies Used
 
