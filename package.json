@@ -10,7 +10,8 @@
     "migrate": "drizzle-kit migrate",
     "studio": "drizzle-kit studio",
     "generate": "drizzle-kit generate --schema ./app/db/schema.ts --dialect sqlite --out ./drizzle",
-    "push": "drizzle-kit push --schema ./app/db/schema.ts --dialect sqlite --url sqlite.db"
+    "push": "drizzle-kit push --schema ./app/db/schema.ts --dialect sqlite --url sqlite.db",
+    "seed": "vite-node app/db/seed.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",
@@ -33,7 +34,8 @@
     "drizzle-kit": "^0.25.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
-    "typescript": "^5.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
     "vite": "^5.4.8",
     "vite-tsconfig-paths": "^5.0.1"
   },

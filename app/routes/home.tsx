@@ -6,7 +6,7 @@ import { User } from "~/db/schema";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New React Router v7 App" },
+    { title: "New React Router App" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 };
