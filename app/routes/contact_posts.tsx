@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function ContactPosts({ loaderData }: Route.ComponentProps) {
-  const { id } = useParams();
+  const { contactId } = useParams();
   const posts = loaderData.posts;
   return (
     <div>
@@ -22,7 +22,7 @@ export default function ContactPosts({ loaderData }: Route.ComponentProps) {
           >
             <Link
               className="no-underline my-auto"
-              to={`/contact/${id}/post/${post.id}`}
+              to={`/contact/${contactId}/post/${post.id}`}
             >
               <div className="flex-1 no-underline my-auto">{post.title}</div>
               <div className="flex-1 no-underline my-auto">{post.content}</div>
