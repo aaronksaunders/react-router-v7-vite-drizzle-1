@@ -11,7 +11,8 @@
     "studio": "drizzle-kit studio",
     "generate": "drizzle-kit generate --schema ./app/db/schema.ts --dialect sqlite --out ./drizzle",
     "push": "drizzle-kit push --schema ./app/db/schema.ts --dialect sqlite --url sqlite.db",
-    "seed": "vite-node app/db/seed.ts"
+    "seed": "vite-node app/db/seed.ts",
+    "format": "npx prettier --config .prettierrc --write 'app/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",

@@ -23,16 +23,11 @@ export const loader = async () => {
 
 export default function Index({ loaderData }: Route.ComponentProps) {
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-      </ul>
+    <div className="m-4">
       <div>
         {/* LIST USERS */}
-        <h1 className="text-2xl font-bold">Users</h1>
-        <div className="flex flex-row gap-2 mx-4 my-2">
+        <h1 className="text-xl font-bold">Contacts</h1>
+        <div className="flex flex-row gap-2  my-2">
           <Link
             to="/contact/add"
             className="bg-green-500 hover:bg-green-700 text-white text-xs py-2 px-4 rounded"
@@ -40,10 +35,10 @@ export default function Index({ loaderData }: Route.ComponentProps) {
             Add New Contact
           </Link>
         </div>
-        <div className="flex flex-col gap-2 ml-4">
+        <div className="flex flex-col gap-2">
           {loaderData.users.map((user: User) => (
             <div
-              className="flex flex-row gap-2 border-2 px-2 py-2"
+              className="flex flex-row gap-2 border rounded px-2 py-2"
               key={user.id}
             >
               <Link className="no-underline my-auto" to={`/contact/${user.id}`}>

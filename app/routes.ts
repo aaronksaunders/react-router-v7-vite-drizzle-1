@@ -16,7 +16,10 @@ import { index, route } from "@react-router/dev/routes";
 export const routes: RouteConfig = [
   index("routes/home.tsx"),
   route("/about", "routes/about.tsx"),
-  route("/contact/:id", "routes/contact_simple.tsx"),
-  route("/contact/:id/edit", "routes/contact_edit.tsx"),
+  route("/contact/:contactId", "routes/contact.tsx", [
+    index("routes/contact_posts.tsx"),
+    route("post/:postId", "routes/post.tsx"),
+  ]),
+  route("/contact/:contactId/edit", "routes/contact_edit.tsx"),
   route("/contact/add", "routes/contact_add.tsx"),
 ];
