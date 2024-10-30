@@ -1,5 +1,5 @@
 /**
- * Defines the routes for the application.
+ * Defines the routes for the application.› 
  *
  * The `routes` array contains the following routes:
  * - The home page at the root URL (`/`)
